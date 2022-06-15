@@ -8,10 +8,10 @@ print(syn.crypt.custom.encrypt("aes-gcm","YO SUP","0123456789ABCDEF0123456789ABC
 local SynAES = function(key)
     local crypto = syn.crypt.custom
     local enc = function(data,iv)
-        return syn.crypt.custom.encrypt("aes-gcm",data,key,iv)
+        return crypto.encrypt("aes-gcm",data,key,iv)
     end
     local dec = function(data,iv)
-        return syn.crypt.custom.decrypt("aes-gcm",data,key,iv)
+        return crypto.decrypt("aes-gcm",data,key,iv)
     end
     return {
         encrypt=enc,
